@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --shishutaa-primary: #8C2237;
+    --shishutaa-primary-hover: #72192B;
+    --shishutaa-rose-light: #FDF2F4;
+    --shishutaa-rose-border: #F9D0D8;
+    --shishutaa-dark: #2D1B22;
+    --shishutaa-muted: #64748B;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased selection:bg-rose-700 selection:text-white min-h-screen overflow-x-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #FAF6F8;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(253, 242, 244, 0.9) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(248, 236, 240, 0.8) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(254, 246, 248, 0.7) 0px, transparent 50%);
+  }
+}
+
+/* Shishutaa Light Theme Cards & Panels */
+.shishutaa-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(244, 209, 217, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(140, 34, 55, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shishutaa-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 34, 55, 0.3);
+  box-shadow: 0 12px 28px -4px rgba(140, 34, 55, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+}
+
+.shishutaa-btn-primary {
+  background: linear-gradient(135deg, #8C2237 0%, #A62944 100%);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px 0 rgba(140, 34, 55, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+.shishutaa-btn-primary:hover {
+  background: linear-gradient(135deg, #74192B 0%, #8C2237 100%);
+  box-shadow: 0 6px 20px 0 rgba(140, 34, 55, 0.35);
+  transform: translateY(-1px);
+}
+
+.shishutaa-header-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244, 209, 217, 0.7);
+}
+
+.shishutaa-sidebar-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(244, 209, 217, 0.7);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(248, 236, 240, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 34, 55, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 34, 55, 0.5);
+}
+
+/* Audio wave bars */
+@keyframes wave-bars {
+  0%, 100% { height: 6px; }
+  50% { height: 26px; }
+}
+
+.voice-bar-1 { animation: wave-bars 1.2s infinite ease-in-out 0.1s; }
+.voice-bar-2 { animation: wave-bars 1.2s infinite ease-in-out 0.3s; }
+.voice-bar-3 { animation: wave-bars 1.2s infinite ease-in-out 0.2s; }
+.voice-bar-4 { animation: wave-bars 1.2s infinite ease-in-out 0.4s; }
+
+/* Print optimization */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
